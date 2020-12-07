@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체-클래스 > 프로타입 방식</title>
+<script>
+// 클래스 생성자
+function User() {
+	//프로퍼티 정의
+	this.name = "ddandonge";
+	this.age = 10;
+}
+
+// 메서드 정의
+User.prototype.showInfo = function() {
+	document.write("name =" + this.name + ", age = " + this.age);
+}
+
+// 인스턴스 생성
+var user = new User();
+
+// 메서드 호출
+user.showInfo();
+
+function Person() {
+	this.name = '홍길동';
+	this.age = 30;
+}
+
+Person.prototype.talk = function() {
+	console.log('안녕하세요'+this.name+'입니다');
+}
+var p = new Person();
+console.log(typeof p); // object 리턴
+p.talk();
+</script>
+</head>
+<body>
+
+</body>
+</html>

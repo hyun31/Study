@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키보드 이벤트 (글자수 구하는 실습)</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		$('textarea').keyup(function() {
+			//남은 글자수를 구한다.
+			var inputlength = $(this).val().length;
+			var remain = 150 - inputlength;
+
+			//문서객체에 입력
+			$('h1').html(remain);
+
+			//남은 글자수가 없으면 문서 객체의 생강을 변경한다.
+			if (remain >= 0) {
+				$('h1').css('color', 'black');
+			} else {
+				$('h1').css('color', 'red');
+			}
+
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>지금 내생각을</p>
+		<h1>150</h1>
+		<textarea cols="70" rows="5"></textarea>
+	</div>
+
+</body>
+</html>

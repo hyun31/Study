@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저 page41</title>
+<script>
+function test(name) {
+	var output = 'Hello' + name + '..!'; // pirtive 변수(지역변수)
+	// 내부메서드에서는 private 멤버변수 사용가능
+	return function() {
+		console.log(output);
+	};
+}
+// 지역변수 output은 test()가 호출될 때 생성
+test('JavaScript')(); // 함수가 리턴되므로
+
+var func = test('JavaScript');
+func();
+</script>
+</head>
+<body>
+
+</body>
+</html>

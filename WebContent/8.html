@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 처리 방식 때 많이 사용</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#myTask").children().click(function() { //이방법은 새로 추가된 li 에는 이벤트가 적용되지않는다
+			$(this).remove();
+		});
+		$("#myTask").on("click", "li", function() { // 이방법은 새로 추가된 li에 이벤트가 적용
+			$(this).remove();
+		});
+		$("#btnAction").on("click", function() {
+			$("#myTask").append("<li> new row</li>");
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id="myTask">
+		<li>11</li>
+		<li>22</li>
+		<li>33</li>
+	</ul>
+	<input type="button" value="행추가" id="btnAction">
+</body>
+</html>

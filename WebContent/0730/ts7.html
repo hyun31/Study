@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저 page40</title>
+<script>
+// 일반함수
+function addCount() {
+	var count = 0;
+	count++;
+	return count;
+}
+console.log('첫번째:'+addCount()); // 1
+console.log('두번째:'+addCount()); // 1
+console.log('세번째:'+addCount()); // 1
+
+// 클로저 사용
+function createCounter() {
+	var count = 0;
+	function addCount() {
+		count++;
+		return count;
+	}
+	return addCount;
+}
+var counter = createCounter();
+console.log('첫번째:' + counter()); // 1
+console.log('두번째:' + counter()); // 2
+console.log('세번째:' + counter()); // 3 
+</script>
+</head>
+<body>
+
+</body>
+</html>

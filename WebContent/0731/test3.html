@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 문제_3번 0731 </title>
+<script>
+	function dan() {
+		document.write("<h2>Hello World</h2>");
+		document.write("<table border=2 width=40%>");
+
+		
+		document.write("<tr><td bgcolor='yellow'>X</td>");
+		for(var i = 1; i<=9; i++){
+			document.write("<td bgcolor='pink'>" + i + "</td>");
+		}
+		for (var i = 1; i <= 9; i++) {
+			document.write("<tr>");
+			document.write("<td>" + i + "</td>");
+
+			for (var j = 1; j <= 9; j++) {
+				document.write("<td>" + i * j + "</td>")
+			}
+			document.write("<tr>")
+		}
+		document.write("</table>")
+	}
+</script>
+</head>
+<body>
+	<h3>몇단을 만들까요?</h3>
+	<input type="text" id="dan" />
+	<button onclick="dan()">구구단 만들기</button>
+</body>
+</html>

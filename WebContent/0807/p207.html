@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체조작</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      // 첫번째 유형, 모든 h1에 color 스타일 추가
+      /* $(document).ready(function () {
+        $("h1").css("color", "red");
+      }); */
+
+      // 두번째 유형, h1의 각 index별로 다른 속성값을 설정
+      /* $(document).ready(function () {
+        // 변수를 선언
+        var color = ["red", "white", "purple"];
+
+        // 문서 객체의 스타일을 변경
+        $("h1").css("color", function (index) {
+          return color[index];
+        });
+      }); */
+
+      // 세번째 유형, 모든 h1에 여러 css설정을 추가
+      $(document).ready(function () {
+        // 변수를 선언
+        var color = ["red", "white", "purple"];
+
+        // 문서 객체의 스타일을 변경
+        $("h1").css({
+          color: function (index) {
+            return color[index];
+          },
+          backgroundColor: "black",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+    <h1>Header - 2</h1>
+  </body>
+</html>

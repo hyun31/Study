@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장함수(타이머 함수) page46</title>
+<script>
+// 3초 후에 함수를 실행합니다.
+setTimeout(function() {
+	console.log('3초가 지났습니다. 이응이응..')
+}, 3000);
+
+// 1초마다 함수를 실행합니다.
+var intervallD = setInterval(function() {
+	console.log('<p>' + new Date() + '<p>');
+}, 1000);
+
+// 10초 후 함수를 실행합니다.
+setTimeout(function() {
+	//타이머를 종료합니다.
+clearInterval(intervallD);
+}, 10000);
+</script>
+</head>
+<body>
+
+</body>
+</html>

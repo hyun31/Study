@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제 4 카운터 클로저를 생성합니다.</title>
+<script>
+var counter = (function() {
+	var privateCounter = 0;
+	  return { 
+		    inc: function() { 
+		        privateCounter++; 
+		    }, 
+		    dec: function() { 
+		        privateCounter--; 
+		    }, 
+		    val: function() { 
+		        return privateCounter; 
+		    } 
+		  };
+		})();
+counter.inc(); // 1증가
+counter.inc(); // 1증가
+counter.dec(); // 1감소
+console.log(counter.val()); // 1출력
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

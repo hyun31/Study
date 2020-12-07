@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>카페 call 함수 예제</title>
+<script>
+	var obj = {
+		string : 'aa',
+		yell : function(val1, val2) {
+			console.log(val1 + ', ' + val2 + ', ' + this.string);
+		}
+	};
+	var obj2 = {
+		string : 'bb'
+	};
+	obj.yell(1, 2); // 1,2,aa
+
+	obj.yell.call(obj2, 1, 2); // 1,2,bb\
+	
+	console.log(obj.yell);
+	console.log(obj.yell.call);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

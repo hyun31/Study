@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+//         // 예제: data => Event 발생 시 Data 전달예제
+//         function handlerName(event) {
+//           alert(event.data.msg);
+//         }
+
+//         $(document).ready(function () {
+//           $("p").on("click", { msg: "You just clicked me!" }, handlerName);
+//         });
+
+      // 예제: off => event 취소 예제
+      $(document).ready(function () {
+        $("p").on("click", function () {
+          $(this).css("background-color", "pink");
+        });
+
+        $("button").click(function () {
+          $("p").off("click");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>1111111111</p>
+    <p>2222222222</p>
+    <button>Click Here</button>
+  </body>
+</html>

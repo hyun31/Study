@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실행 순서 page51</title>
+<script>
+// 클로저를 통해 0,1,2가 호출되게 처리
+for(var i = 0; i<3; i++){
+	(function (closed_i) {
+		setTimeout(function() {
+			console.log(closed_i);
+		}, 0);
+	})(i)
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+

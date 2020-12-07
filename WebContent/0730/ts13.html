@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체-클래스 (리터럴 방식) page56</title>
+<script>
+	// 1.인스턴스 만들고 멤버함수 호출하기
+	 var user={
+	 name: "홍길동",
+	 age: 10,
+	 showInfo:function(){
+	 document.write("name = " +this.name+" ,age =" +this.age);
+	 }
+	 };
+	 // 메서드 접근하기
+	 user.showInfo(); 
+
+/* 	// 2.인스터를 매개변수로 전달하기
+	var userInfo = {
+		userName : "김춘경",
+		id : "ddandongne",
+		age : 30,
+		address : "서울시 금천구",
+		nickName : "딴동네"
+	};
+
+	// 함수 호출
+	showInfo(userInfo);
+
+	// 함수에서 데이터 사용
+	function showInfo(userInfo) {
+		document.write("name = " + userInfo.userName, "id= " + userInfo.id,
+				", nickName =" + userInfo.nickName, ",age =" + userInfo.age,
+				",address =" + userInfo.address)
+	} */
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>카페 constructor 예제 </title>
+<script>
+	//부모 클래스
+	function MyParent() {
+		this.property1 = "data1";
+	}
+	MyParent.prototype.info = function() {
+		console.log("MyParent info: property1 = " + this.property1);
+	}
+
+	//자식 클래스
+	function MyChild() {
+	}
+
+	//부모 클래스 상속
+	MyChild.prototype = new MyParent();
+	MyChild.prototype.constructor = MyChild;
+	var parent1 = new MyParent();
+	var child1 = new MyChild();
+
+	if (parent1.constructor == MyParent) {
+		console.log('MyParent');
+	}
+
+	if (child1.constructor == MyChild) {
+		console.log('MyChild');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

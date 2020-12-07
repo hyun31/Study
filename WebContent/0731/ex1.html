@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제_1번 0731</title>
+<script>
+	function filterArray(/*array*/a, /*Booleanfunction*/predicate) {
+		let arr = [];
+		for ( let i in a) {
+			if (predicate(a[i])) {
+				arr.push(a[i]);
+			}
+		}
+		return arr;
+	}
+	var numbers = [ 45, 4, 9, 16, 25 ];
+	function myFunction(value) {
+		return value > 18;
+	}
+	// 함수가 true인 요소들의 새로운 배열을 리턴
+	var over18 = filterArray(numbers, myFunction); 
+	console.log(over18);
+</script>
+</head>
+<body>
+
+</body>
+</html>

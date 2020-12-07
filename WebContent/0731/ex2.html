@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 문제_2번 0731</title>
+<script>
+function mapArray(/*array*/a, /*function*/f) {
+    let arr1 = [];
+    for (let i in a) {
+        arr1.push(f(a[i]));
+    }
+    return arr1;
+}
+var numbers1 = [45, 4, 9, 16, 25];
+
+	// 함수로직을 반영한새로운 배열을 리턴
+	var numbers2 = mapArray(numbers1, myFunction1);
+	console.log(numbers2);
+	function myFunction1(value) {
+		return value * 2;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

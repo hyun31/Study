@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캡슐화 실습 page72</title>
+<script>
+function Rectangle(w,h) {
+	// 변수를 선언합니다.
+	var width = w; // 5가 입력되있는데 36행에서 2를 집어 넣어서 2로 바뀜 
+	var height = h; // 7
+	
+	//메서드를 선언합니다.
+	this.getWidth = function() {return width};
+	this.getHeight = function() {return height};
+	this.setWidth = function(w){
+		if(w<0){
+			throw '길이는 음수일 수 없습니다.';
+		}else {
+			width = w;
+		}
+	};
+	this.setHeight = function(h) {
+		if(w<0){
+			throw '길이는 음수일 수 없습니다.';
+		}else{
+			height = h;
+		}
+	};
+}
+Rectangle.prototype.getArea = function(){
+	return this.getWidth() * this.getHeight();
+};
+
+	// 변수를 선언 합니다.
+	var rectangle = new Rectangle(5,7); 
+	rectangle.setWidth(2); // -2 입력시 에러 메세지 발생  , 2 값을 입력시 값 나옴.
+	
+	// 출력합니다.
+	alert('AREA: ' + rectangle.getArea()); // 2*7 = 14 그래서 값이 14가 나옴
+</script>
+</head>
+<body>
+
+</body>
+</html>

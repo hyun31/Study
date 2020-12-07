@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>trigger 실습</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+// 이벤트를 연결합니다.
+$(document).ready(function () {
+	$('h1').click(function (event, data1, data2) {
+		alert(data1 + ':' + data2);
+	});
+	// 이벤트를 강제로 발생 시킵니다. 
+	$('h1').eq(1).trigger('click',[273,52]);
+});
+
+// 버블링 지원
+// 이벤트 전달방지
+//false리턴
+//stopPropagation
+/*===============================*/
+// 클릭 하지도 않았는데 이벤트 발생
+// 이벤트 발생 시 추가적인 데이터도 전달가능
+</script>
+</head>
+<body>
+<h1>Stard:</h1>
+<h1>Stard:</h1>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체실습(1) page64</title>
+<script>
+var students = [];
+students.push({이름:'아이유', 국어:87, 수학:98, 영어:80, 과학:95});
+students.push({이름:'이지은', 국어:77, 수학:98, 영어:80, 과학:15});
+students.push({이름:'김태연', 국어:57, 수학:98, 영어:80, 과학:25});
+students.push({이름:'임윤아', 국어:67, 수학:98, 영어:80, 과학:35});
+students.push({이름:'별', 국어:47, 수학:98, 영어:80, 과학:45});
+students.push({이름:'달', 국어:37, 수학:98, 영어:80, 과학:55});
+students.push({이름:'해', 국어:27, 수학:98, 영어:80, 과학:75});
+students.push({이름:'하늘', 국어:17, 수학:98, 영어:80, 과학:75});
+students.push({이름:'땅', 국어:97, 수학:98, 영어:80, 과학:65});
+students.push({이름:'비비', 국어:87, 수학:98, 영어:80, 과학:95});
+
+// 모든 students 배열 내의 객체에 메서드를 추가합니다.
+for(var i in students){
+	// 총점을 구하는 메서드를 추가합니다.
+	students[i].getSum = function() {
+		return this.국어 + this.수학 + this.영어 + this.과학;
+	};
+	// 평균을 구하는 메세더를 추가합니다.
+	students[i].getAverage = function(){
+		return this.getSum() / 4;
+	};
+		}
+	// 출력합니다.
+	var output = '이름\t총점\t평균\n';
+	for(var i in students){
+		with(students[i]){
+			output += 이름 + '\t' + getSum() + '\t' + getAverage() + '\n';
+	}
+}
+	console.log(output);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

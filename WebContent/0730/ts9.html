@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저 예제(중급) page42</title>
+<script>
+function makefunc(x) {
+	return function() {return x;}
+}
+
+// 리턴된 함수를 배열요소에 저장
+var a = [makefunc('x'),makefunc('y'),makefunc('z')];
+
+console.log(a[0]()); // x 출력
+console.log(a[1]()); // y 출력
+console.log(a[2]()); // z 출력
+
+// 클로저를 사용하여 Counter만들기
+// 아래 소스는 외부에서 counter값을 변경할 수 있는 문제 존재
+usiquelnteger.counter = 0;
+
+function usiquelnteger() {
+	return usiquelnteger.counter++;
+}
+
+// 클로저를 이용해 해결한 소스
+var uniqueID = (function(){
+	var id = 0;
+	return function(){return id++;};
+})();
+
+// 클로저가 만든 Counter
+console.log(uniqueID()); // 1
+console.log(uniqueID()); // 2 
+console.log(uniqueID()); // 3
+</script>
+</head>
+<body>
+
+</body>
+</html>

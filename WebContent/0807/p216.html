@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체조작</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      // 예제1 : 하나의 속성명
+      $(document).ready(function () {
+        $("<img/>").attr("src", "./img/Chrysanthemum.jpg").appendTo("body");
+      });
+
+      // 예제2 : 여러 속성을 입력하는 다른 방식
+      // Html객체에 여러 속성을 객체로 추가
+      $(document).ready(function () {
+        $("<img />)", {
+          src: "./img/Chrysanthemum.jpg",
+          width: 350,
+          height: 250,
+        }).appendTo("body");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

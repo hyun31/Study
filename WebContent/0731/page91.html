@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본내장객체 Array예제 page91</title>
+<style>
+ul.menu{
+list-style: none;
+border: 1px solid #000;
+height: 40px;
+padding: 20px;
+}
+
+ul.menu li{
+	display: block;
+	float: left;
+	padding: 10px;
+	border: 1px solid #000;
+	margin-right: 10px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function() {
+	var menu = $(".menu");
+	var menuData = "menu1, menu2, menu3, menu4,";
+	// 여기에 풀이를 입력해주세요.
+	
+	// 문자열 메뉴 아이템 정보를 배열 메뉴 아이템 정보로 변경
+	var menultems = menuData.split(",");
+	
+	// 메뉴 개수 만큼 루프 돌기 = 
+		for(var i=0; i<menultems.ength; i++){
+			// i번째 배열 요소를 메뉴 아이템으로 만들기
+			var newMenultem = "<li>" + menultems[i] + "</li>";
+			
+			// 동적으로 메뉴 아이템 추가
+			menu.append(newMenultem);
+		}
+})
+</script>
+</head>
+<body>
+<ul class="menu">
+<li>
+메뉴 1
+</li>
+<li>
+메뉴 2
+</li>
+<li>
+메뉴 3
+</li>
+<li>
+메뉴 4
+</li>
+<li>
+메뉴 5
+</li>
+</ul>
+</body>
+</html>

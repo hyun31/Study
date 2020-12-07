@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체의 속성 추가와 제거 page63</title>
+<script>
+// 속성추가/삭제: 동적으로 속성/메서드 추가
+var student = {};
+// 속성 추가
+student.이름 = '알리스타';
+student.취미 = '박치기';
+student.특기 = '어디든 머리로 들이박기';
+student.장래희망 = '게임캐릭터';
+
+// 메서드 추가
+student.toString = function() {
+	var output ='';
+	for(var key in this){
+		//toString() 메서드는 출력하지않게 합니다.
+		if(key != 'toString'){
+			output += key + '\t' + this[key] + '\n';
+		}
+	}
+	return output;
+};
+
+console.log(student.toString());
+
+// 속성제거
+delete(student.장래희망);
+console.log(student.toString());
+</script>
+</head>
+<body>
+
+</body>
+</html>

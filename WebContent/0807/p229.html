@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 이벤트를 연결
+        $("h1").click(function (event, data1, data2) {
+          alert(data1 + ":" + data2);
+        });
+
+        // 이벤트를 강제로 발생시킴 (클릭 하지도 않았는데 이벤트 발생)
+        // 이벤트 발생 시 추가적인 데이터도 전달 가능
+        $("h1").eq(1).trigger("click", [273, 52]);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Start:</h1>
+    <h1>Start:</h1>
+  </body>
+</html>
